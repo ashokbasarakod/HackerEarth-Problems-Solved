@@ -1,0 +1,26 @@
+using System;
+
+namespace RoyAndProfilePicture
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int length = Convert.ToInt32(Console.ReadLine());
+            int numberOfImages = Convert.ToInt32(Console.ReadLine());
+            
+			for(int count = 2; count < numberOfImages+2; count++)
+            {
+                string[] dim = Console.ReadLine().Split(' ');
+                int width = Convert.ToInt32(dim[0]);
+                int height = Convert.ToInt32(dim[1]);
+                if (width < length || height < length)
+                    Console.WriteLine("UPLOAD ANOTHER");
+				else if(width == height)
+                    Console.WriteLine("ACCEPTED");
+                else
+					Console.WriteLine("CROP IT");
+            }          
+        }
+    }
+}
