@@ -1,0 +1,55 @@
+using System;
+using System.Linq;
+using System.Text;
+ 
+class Program
+{
+    static void Main(string[] args)
+    {
+        var t = int.Parse(Console.ReadLine());
+        
+        for (var i = 0; i < t; i++)
+        {
+            var first = Sort(Console.ReadLine());
+            var second = Sort(Console.ReadLine());
+            
+            var f = 0;
+            var s = 0;
+            var count = 0;
+            
+            while (f < first.Length && s < second.Length)
+            {
+                if (first[f] == second[s])
+                {
+                    f++;
+                    s++;
+                }
+                else
+                {
+                    if (first[f] < second[s])
+                    {
+                        f++;
+                    }
+                    else
+                    {
+                        s++;
+                    }
+                    
+                    count++;
+                }
+            }
+            
+            count += first.Length - f + second.Length - s;
+            
+            Console.WriteLine($"{count}");
+        }
+    
+    }
+    
+    static char[] Sort(string input)
+    {
+        var array = input.ToCharArray();
+        Array.Sort(array);
+        return array;
+    }
+}

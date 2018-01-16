@@ -1,0 +1,19 @@
+using System;
+
+namespace ToggleString
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fullStr = Console.ReadLine();
+            foreach (char c in fullStr)
+            {
+                if (char.IsLower(c))
+                    char.ToUpper(c);
+                else
+                    char.ToLower(c);
+            }
+        }
+    }
+}

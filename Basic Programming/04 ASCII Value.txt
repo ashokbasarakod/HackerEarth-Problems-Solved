@@ -1,0 +1,12 @@
+using System;
+
+namespace Acssi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {                        
+            Console.WriteLine((int)Char.Parse(Console.ReadLine()));            
+        }
+    }
+}

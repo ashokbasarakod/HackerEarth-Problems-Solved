@@ -1,0 +1,32 @@
+using System;
+
+namespace TwoStrings
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int testCount = Convert.ToInt32(Console.ReadLine());
+            for(int t=0; t<testCount; t++)
+            {
+                string[] fullStr = Console.ReadLine().Split(' ');
+                char[] firstStr = fullStr[0].ToCharArray();
+                char[] secondStr = fullStr[1].ToCharArray();
+                int sortCount = 0;
+                Array.Sort(firstStr);
+                Array.Sort(secondStr);
+                for (int i = 0; i < firstStr.Length; i++)
+                {
+                    if (firstStr[i] == secondStr[i])
+                        sortCount++;
+                    else
+                        break;
+				}
+                if (sortCount == secondStr.Length)
+                    Console.WriteLine("YES");
+                else
+                    Console.WriteLine("NO");
+            }
+        }
+    }
+}
