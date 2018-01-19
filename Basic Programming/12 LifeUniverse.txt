@@ -1,0 +1,18 @@
+using System;
+
+namespace LifeUniverse
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            do
+            {
+                int number = Convert.ToInt32(Console.ReadLine());
+                if (number == 42)
+                    break;
+                Console.WriteLine(number);
+            }while(true);
+        }
+    }
+}

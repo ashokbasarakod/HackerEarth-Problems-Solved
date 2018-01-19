@@ -1,0 +1,24 @@
+using System;
+
+namespace FindProduct
+{
+    class Program
+    {
+        public static double answer = 1;
+        static void Main(string[] args)
+        {
+            int arrLen = Convert.ToInt32(Console.ReadLine());
+            string stringArrayElemnts = Console.ReadLine();
+            string[] strArr = stringArrayElemnts.Split(' ');
+            int[] arr = Array.ConvertAll<string, int>(strArr, int.Parse);
+            for (int i = 0; i < arrLen; i++)
+                answer = findProduct(arr[i]);
+            Console.WriteLine(answer);
+        }
+
+        private static double findProduct(int value)
+        {
+            return (Program.answer * value) % (Math.Pow(10, 9) + 7);
+        }
+    }
+}
